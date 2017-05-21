@@ -1,8 +1,6 @@
 class Cart {
     
-    var paymentConfig: [String: String] {
-        return Cart.loadAndPreparePaymentConfig()
-    }
+    lazy var paymentConfig = Cart.loadAndPreparePaymentConfig()
     
     func checkout() {
         if paymentConfig["type"] == "card" {
