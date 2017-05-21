@@ -1,6 +1,8 @@
 class Cart {
     
-    let paymentConfig = Cart.loadAndPreparePaymentConfig()
+    var paymentConfig: [String: String] {
+        return Cart.loadAndPreparePaymentConfig()
+    }
     
     func checkout() {
         if paymentConfig["type"] == "card" {
@@ -17,3 +19,6 @@ class Cart {
 }
 
 let cart = Cart()
+
+cart.checkout()
+cart.checkout()
